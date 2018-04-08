@@ -1,0 +1,60 @@
+# GROUPS
+
+group.opphalds:
+  friendly_name: Opphaldsrom
+  icon: mdi:sofa
+  assumed_state: false
+
+group.door_group:
+  friendly_name: Låsar
+  control: hidden
+
+group.netatmo_inne:
+  friendly_name: Inne
+
+group.netatmo_ute:
+  friendly_name: Ute
+
+group.system_group:
+  friendly_name: System
+
+group.sporing:
+  friendly_name: Nokon heime?
+
+group.flower_sensor_1:
+  friendly_name: Storeplanta
+
+group.flower_sensor_2:
+  friendly_name: Lisjeplanta
+
+group.speedtest:
+  friendly_name: Speedtest
+
+group.rom:
+  friendly_name: Rom
+
+group.pult:
+  friendly_name: Pult
+
+group.tv:
+  friendly_name: TV-kråa
+
+group.tak:
+  friendly_name: Tak
+
+group.soverom_lys:
+  friendly_name: Soverom
+  icon: mdi:hotel
+
+group.vaer:
+  friendly_name: Vær  
+
+group.nest:
+  friendly_name: Røykvarslar
+
+group.door_status:
+  friendly_name: Status
+
+group.soverom:
+  friendly_name: Soverom
+  assumed_state: false

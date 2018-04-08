@@ -1,0 +1,23 @@
+- alias: Charge iPad notification
+  trigger:
+    - platform: time
+      at: '22:00:00'
+  condition:
+    - condition: time
+      weekday:
+        - sun
+        - mon
+        - tue
+        - wed
+        - thu
+    - condition: state
+      entity_id: device_tracker.pixel2xl
+      state: 'home'
+    - condition: numeric_state
+      entity_id: sensor.battery_ipad
+      below: 45
+  action:
+    - service: notify.notifier_peter
+      data:
+        message: "Hugs å lade iPaden før skule i morgon!"
+        title: "Lad iPaden"

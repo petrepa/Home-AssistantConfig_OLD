@@ -1,0 +1,2 @@
+  - platform: tibber
+    access_token: !secret tibber_token

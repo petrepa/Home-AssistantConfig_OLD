@@ -1,0 +1,178 @@
+# SENSORS
+sensor.netatmo_opphaldsrom_co2:
+  friendly_name: CO2
+
+sensor.netatmo_opphaldsrom_humidity:
+  friendly_name: Fuktigheit
+
+sensor.netatmo_opphaldsrom_noise:
+  friendly_name: Lydnivå
+
+sensor.netatmo_opphaldsrom_pressure:
+  friendly_name: Trykk
+
+sensor.netatmo_opphaldsrom_temperature:
+  friendly_name: Temperatur
+
+sensor.netatmo_opphaldsrom_wifi:
+  friendly_name: WiFi
+
+sensor.processor_use:
+  friendly_name: CPU-bruk
+
+sensor.disk_used_percent:
+  friendly_name: Disk-bruk
+
+sensor.memory_use:
+  friendly_name: Minnebruk
+
+sensor.memory_use_percent:
+  friendly_name: Minnebruk
+
+
+sensor.last_boot:
+  friendly_name: Siste oppstart
+
+sensor.since_last_boot:
+  friendly_name: Tid sidan siste oppstart
+
+sensor.netatmo_ute_temperature:
+  friendly_name: Temperatur
+
+sensor.netatmo_ute_humidity:
+  friendly_name: Fuktigheit
+
+sensor.netatmo_ute_battery:
+  friendly_name: Batteri
+
+sensor.netatmo_ute_radio:
+  friendly_name: Signalstyrke
+
+sensor.flower_1_battery:
+  friendly_name: Batteri
+  icon: mdi:battery
+
+sensor.flower_1_conductivity:
+  friendly_name: Leiingsevne
+  icon: mdi:flash
+
+sensor.flower_1_light_intensity:
+  friendly_name: Lysintensitet
+  icon: mdi:lightbulb-on-outline
+
+sensor.flower_1_moisture:
+  friendly_name: Fuktigheit
+  icon: mdi:water-percent
+
+sensor.flower_1_temperature:
+  friendly_name: Temperatur
+
+sensor.flower_2_battery:
+  friendly_name: Batteri
+  icon: mdi:battery
+
+sensor.flower_2_conductivity:
+  friendly_name: Leiingsevne
+  icon: mdi:flash
+
+sensor.flower_2_light_intensity:
+  friendly_name: Lysintensitet
+  icon: mdi:lightbulb-on-outline
+
+sensor.flower_2_moisture:
+  friendly_name: Fuktigheit
+  icon: mdi:water-percent
+
+sensor.flower_2_temperature:
+  friendly_name: Temperatur
+
+sensor.speedtest_download:
+  friendly_name: Nedlasting
+  icon: mdi:download
+
+sensor.speedtest_upload:
+  friendly_name: Opplasting
+  icon: mdi:upload
+
+sensor.speedtest_ping:
+  friendly_name: Ping
+
+sensor.vr_cloudiness:
+  friendly_name: Skya
+  icon: mdi:cloud
+
+sensor.vr_dewpoint_temperature:
+  friendly_name: Doggpunkt
+
+sensor.vr_fog:
+  friendly_name: Tåke
+  icon: mdi:weather-fog
+
+sensor.vr_high_clouds:
+  friendly_name: Høge skyer
+  icon: mdi:weather-cloudy
+
+sensor.vr_humidity:
+  friendly_name: Fuktigheit
+  icon: mdi:water-percent
+
+sensor.vr_low_clouds:
+  friendly_name: Låge skyer
+  icon: mdi:weather-cloudy
+
+sensor.vr_medium_clouds:
+  friendly_name: Medium skyer
+  icon: mdi:weather-cloudy
+
+sensor.vr_precipitation:
+  friendly_name: Nedbør
+  icon: mdi:weather-snowy-rainy
+
+sensor.vr_pressure:
+  friendly_name: Trykk
+  icon: mdi:gauge
+
+sensor.vr_symbol:
+  friendly_name: Symbol
+
+sensor.vr_temperature:
+  friendly_name: Temperatur
+
+sensor.vr_wind_direction:
+  friendly_name: Vindretning
+  icon: mdi:weather-windy
+
+sensor.vr_wind_speed:
+  friendly_name: Vindfart
+  icon: mdi:weather-windy
+
+sensor.bedroom_nest_protect_battery_health:
+  friendly_name: Batteri
+  icon: mdi:battery
+
+sensor.bedroom_nest_protect_co_status:
+  friendly_name: CO-status
+  icon: mdi:biohazard
+
+sensor.bedroom_nest_protect_smoke_status:
+  friendly_name: Røykstatus
+  icon: mdi:weather-fog
+
+sensor.temperature_158d0001f53fa9:
+  friendly_name: Temperatur
+
+sensor.illumination_34ce00909f02:
+  friendly_name: Lysintensitet
+  icon: mdi:lightbulb-on-outline
+
+sensor.humidity_158d0001f53fa9:
+  friendly_name: Fuktigheit
+  icon: mdi:water-percent
+
+binary_sensor.door_window_sensor_158d0001bf2cc7:
+  friendly_name: Soverom 
+  icon: mdi:door-open
+
+binary_sensor.door_window_sensor_158d0001ab77b8:
+  friendly_name: Bad
+  icon: mdi:door-open

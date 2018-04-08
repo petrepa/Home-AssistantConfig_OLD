@@ -1,0 +1,13 @@
+# SWITCHES
+switch.mqtt_switch:
+  friendly_name: Ytterdør
+  icon: mdi:door
+  assumed_state: false
+
+switch.opphalds_ovn:
+  friendly_name: Omn
+  icon: mdi:stove
+
+switch.soverom_ovn:
+  friendly_name: Omn
+  icon: mdi:stove

@@ -1,0 +1,12 @@
+- platform: netatmo
+  modules:
+    Opphaldsrom:
+      - temperature
+      - humidity
+      - co2
+      - noise
+      - pressure
+
+    Ute:
+      - temperature
+      - humidity

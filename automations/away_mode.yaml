@@ -1,0 +1,42 @@
+- alias: 'Away Mode'
+  trigger:
+    - platform: state
+      entity_id: device_tracker.nataliaiphone
+      from: 'home'
+      to: 'not_home'
+    - platform: state
+      entity_id: device_tracker.pixel2xl
+      from: 'home'
+      to: 'not_home'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: 'device_tracker.nataliaiphone'
+        state: 'not_home'
+      - condition: state
+        entity_id: 'device_tracker.pixel2xl'
+        state: 'not_home'
+  action:
+    - service: light.turn_off
+      entity_id: group.light
+    - service: switch.turn_off
+      entity_id: group.kitchen
+    - service: climate.set_away_mode
+      data:
+        entity_id: climate.soverom_varme
+        away_mode: 'on'  
+    - service: climate.set_away_mode
+      data:
+        entity_id: climate.opphaldsrom_varme
+        away_mode: 'on'  
+    - service: media_player.media_pause
+      entity_id: group.sonos
+    - service: lock.lock
+      entity_id: lock.door
+    - service: media_player.turn_off
+      entity_id: media_player.samsung_7_series_49_ue49ks7005
+    - service: notify.notifier_peter
+      data:
+        message: "Papki er no i bortemodus"
+        title: "Bortemodus!"

@@ -1,0 +1,49 @@
+
+- alias: 'Hue light on gradually with alarm'
+  hide_entity: False
+  trigger:
+    platform: template
+    value_template: '{{ states.sensor.time.state == states.sensor.alarm_clock_time_long.state }}'
+  condition:
+    condition: state
+    entity_id: input_boolean.alarm_clock_status
+    state: 'on'
+  action:
+    - service: light.turn_on
+      data: 
+        entity_id: light.nattbord_peter
+        brightness: 255
+        transition: 10
+
+- alias: 'Make sound with alarm clock'
+  hide_entity: False
+  trigger:
+    platform: template
+    value_template: '{{ states.sensor.time.state == states.sensor.alarm_clock_time_long.state }}'
+  condition:
+    condition: state
+    entity_id: input_boolean.alarm_clock_sonos
+    state: 'on'
+  action:
+    - service: media_player.volume_set
+      data: 
+        entity_id: media_player.soverom
+        volume_level: 0.1
+    - service: media_player.select_source
+      data:
+        entity_id: media_player.soverom
+        source: 'New Music Friday Norway'
+
+- alias: 'Open blinds with alarm clock'
+  hide_entity: False
+  trigger:
+    platform: template
+    value_template: '{{ states.sensor.time.state == states.sensor.alarm_clock_time_long.state }}'
+  condition:
+    condition: state
+    entity_id: input_boolean.alarm_clock_blind
+    state: 'on'
+  action:
+    - service: cover.open_cover
+      data: 
+        entity_id: cover.rullgardin

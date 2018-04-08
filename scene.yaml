@@ -1,0 +1,6 @@
+  - name: nattlys
+    entities:
+      light.tak:
+        state: on
+        brightness: 0
+        xy_color: [0.5609,0.4042]

@@ -1,0 +1,14 @@
+- alias: The big plant needs water
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.flower_1_moisture
+      below: 15
+  condition:
+    condition: state
+    entity_id: device_tracker.801kpae1469312
+    state: 'home'
+  action:
+    - service: notify.notifier_peter
+      data:
+        message: "Storeplanta må vatnast!"
+        title: "Plantepleie"

@@ -1,0 +1,57 @@
+# LIGHTS
+light.gateway_light_34ce00909f02:
+  friendly_name: Xiaomi Gateway 
+
+light.pult__hgre:
+  friendly_name: Høgre
+  icon: mdi:lamp
+
+light.pult__venstre:
+  friendly_name: Venstre
+  icon: mdi:lamp
+
+light.pult:
+  friendly_name: LED-stripa
+  icon: mdi:led-strip
+
+light.soverom:
+  friendly_name: Tak
+  icon: mdi:ceiling-light
+
+light.tvbenk:
+  friendly_name: Benklampe
+  icon: mdi:lamp
+
+light.tv_3:
+  friendly_name: TV-stripa
+  icon: mdi:television
+
+light.tak_1__dass:
+  friendly_name: '1'
+  icon: mdi:ceiling-light
+
+light.tak_2__dass:
+  friendly_name: '2'
+  icon: mdi:ceiling-light
+
+light.tak_3__dass:
+  friendly_name: '3'
+  icon: mdi:ceiling-light
+
+light.tak_4__sov:
+  friendly_name: '4'
+  icon: mdi:ceiling-light
+
+light.tak_5__soverom:
+  friendly_name: '5'
+  icon: mdi:ceiling-light
+
+light.tak_6__soverom:
+  friendly_name: '6'
+  icon: mdi:ceiling-light
+
+light.nattbord_peter:
+  icon: mdi:lamp
+
+light.nattbord_natalia:
+  icon: mdi:lamp

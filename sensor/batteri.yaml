@@ -1,0 +1,22 @@
+  - platform: template
+    sensors:
+      battery_ipad:
+        friendly_name: iPad batteri
+        entity_id: device_tracker.peterremysinipad
+        unit_of_measurement: '%'
+        value_template: >-
+            {%- if states.device_tracker.peterremysinipad.attributes.battery %}
+                {{ states.device_tracker.peterremysinipad.attributes.battery|round }}
+            {% else %}
+                {{ states.sensor.device_tracker.peterremysinipad.state }}
+            {%- endif %}
+        icon_template: >
+            {% set battery_level = states.sensor.device_tracker.peterremysinipad.state|default(0)|int %}
+            {% set battery_round = (battery_level / 10) |int * 10 %}
+            {% if battery_round >= 100 %}
+              mdi:battery
+            {% elif battery_round > 0 %}
+              mdi:battery-{{ battery_round }}
+            {% else %}
+              mdi:battery-alert
+            {% endif %}

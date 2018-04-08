@@ -1,0 +1,36 @@
+- alias: If the bedroom door is opened and it is daytime, turn on the living room lights
+  trigger:
+    platform: state
+    entity_id: binary_sensor.door_window_sensor_158d0001bf2cc7
+    from: 'off'
+    to: 'on'
+  condition:
+    condition: time
+    # At least one of the following is required.
+    after: '06:30:00'
+    before: '23:00:00'
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+    service: light.turn_on
+    data:
+      entity_id: light.opphaldsrom
+
+- alias: If the bedroom door is opened and it is night time, turn on the living room lights nightly
+  trigger:
+    platform: state
+    entity_id: binary_sensor.door_window_sensor_158d0001bf2cc7
+    from: 'off'
+    to: 'on'
+  condition:
+    condition: time
+    # At least one of the following is required.
+    after: '23:30:00'
+    before: '06:30:00'
+  action:
+    service: scene.turn_on
+    entity_id: scene.nattlys

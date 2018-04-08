@@ -1,0 +1,179 @@
+homeassistant:
+  name: Heim # Name of the location where Home Assistant is running
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: 0 # Impacts weather/sunrise data (altitude above sea level in meters)
+  unit_system: metric # metric for Metric, imperial for Imperial
+  time_zone: Europe/Oslo # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  customize: !include_dir_merge_named customize # Customization file
+
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+http:
+  api_password: !secret http_password
+  base_url: !secret base_url
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+# Text to speech
+tts:
+  - platform: google
+
+# Cloud
+cloud:
+
+mqtt:
+  broker: core-mosquitto
+  username: !secret mqtt_name
+  password: !secret mqtt_pwd
+
+netatmo:
+  api_key: !secret netatmo_api
+  secret_key: !secret netatmo_secret
+  username: !secret netatmo_name
+  password: !secret netatmo_pwd
+
+lock:
+  - platform: sesame
+    email: !secret ses_mail
+    password: !secret ses_pwd
+
+device_tracker:
+  - platform: netgear
+    host: 192.168.1.1 
+    username: !secret net_name
+    password: !secret net_pwd
+    track_new_devices: false
+  - platform: gpslogger
+  - platform: icloud
+    username: !secret iC_name
+    password: !secret iC_pw
+    account_name: iCloud_peter
+
+switch:
+  - platform: mqtt
+    command_topic: "esp/test"
+    state_topic: "esp/test"
+    payload_on: 1
+    payload_off: 0
+  - platform: tplink
+    host: 192.168.1.11
+  - platform: broadlink
+    host: 192.168.1.37
+    mac: !seret BL_mac
+    type: sp2
+    friendly_name: ‘opphalds_ovn’
+  - platform: flux
+    lights:
+      - group.all_lights
+
+nest:
+  client_id: !secret nest_id
+  client_secret: !secret nest_secret
+  sensors:
+    monitored_conditions:
+      - 'co_status'
+      - 'smoke_status'
+      - 'battery_health'
+
+xiaomi_aqara:
+  discovery_retry: 5
+  gateways:
+    - key: !secret xia_key
+
+notify:
+  - name: NOTIFIER_peter
+    platform: pushbullet
+    api_key: !secret pb_key
+
+cover:
+  - platform: mqtt
+    name: "Rullgardin"
+    command_topic: "/raw/esp8266/8982055/in"
+    payload_open: "open"
+    payload_close: "close"
+    paylaod_stop: "0"
+
+climate:
+  - platform: generic_thermostat
+    name: Soverom varme
+    heater: switch.soverom_ovn
+    target_sensor: sensor.temperature_158d0001f53fa9
+    away_temp: 10
+  - platform: generic_thermostat
+    name: Opphaldsrom varme
+    heater: switch.opphalds_ovn
+    target_sensor: sensor.netatmo_opphaldsrom_temperature
+    away_temp: 10
+
+input_number:
+  alarm_clock_hour:
+    initial: 6
+    min: 0
+    max: 23
+    step: 1
+  alarm_clock_minute:
+    initial: 50
+    min: 0
+    max: 55
+    step: 5
+
+input_boolean:
+  alarm_clock_status:
+    initial: on
+  alarm_clock_blind:
+    initial: on
+  alarm_clock_sonos:
+    initial: on
+
+google_assistant:
+  project_id: !secret GA_pro_id
+  client_id: !secret GA_cli_id
+  access_token: !secret GA_token
+  exposed_domains:
+    - switch
+    - input_boolean
+    - group
+    - script
+    - cover
+    - climate
+
+
+zone: !include zones.yaml
+sensor: !include_dir_merge_list sensor
+group: !include_dir_merge_named group
+automation: !include_dir_merge_list automations
+script: !include scripts.yaml

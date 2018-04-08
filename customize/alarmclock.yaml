@@ -1,0 +1,29 @@
+# ALARM CLOCK
+sensor.time:
+  hidden: true
+sensor.alarm_clock_hour:
+  hidden: true
+sensor.alarm_clock_minute:
+  hidden: true
+sensor.alarm_clock_time_long:
+  hidden: true
+sensor.alarm_clock_time:
+  friendly_name: 'Vekkarklokke-innstilling'
+  icon: mdi:alarm
+input_number.alarm_clock_hour:
+  friendly_name: 'Time'
+  icon: mdi:timer
+input_number.alarm_clock_minute:
+  friendly_name: 'Minutt'
+  icon: mdi:timer
+input_boolean.alarm_clock_status:
+  friendly_name: 'Vekkarklokke-status'
+  icon: mdi:alarm-check
+input_boolean.alarm_clock_blind:
+  friendly_name: Aktiver rullgardin
+  icon: mdi:blinds
+input_boolean.alarm_clock_sonos:
+  friendly_name: Aktiver lyd
+  icon: mdi:speaker
+group.alarm_clock:
+  assumed_state: false

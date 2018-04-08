@@ -1,0 +1,16 @@
+- alias: If the bathroom door is opened, make a greeting
+  initial_state: False
+  trigger:
+    platform: state
+    entity_id: binary_sensor.door_window_sensor_158d0001ab77b8
+    from: 'off'
+    to: 'on'
+  action:
+    - service: media_player.volume_set
+      data_template:
+        entity_id: media_player.bad
+        volume_level: 0.5
+    - service: tts.google_say
+      entity_id: media_player.bad
+      data_template:
+        message: 'Welcome to the bathroom!'

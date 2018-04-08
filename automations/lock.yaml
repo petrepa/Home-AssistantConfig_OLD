@@ -1,0 +1,7 @@
+- alias: Lock the door at night
+  trigger:
+    - platform: time
+      at: '23:00:00'
+  action:
+    - service: lock.lock
+      entity_id: lock.door

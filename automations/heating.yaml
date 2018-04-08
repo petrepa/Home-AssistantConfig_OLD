@@ -1,0 +1,66 @@
+- alias: Night time, turn living room heat down
+  trigger:
+    - platform: time
+      at: '22:00:00'
+  condition:
+    condition: time
+    weekday:
+      - sun
+      - mon
+      - tue
+      - wed
+      - thu
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.opphaldsrom_varme
+        temperature: 16
+        operation_mode: Heat
+
+- alias: Day time, turn living room heat up
+  trigger:
+    - platform: time
+      at: '06:30:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.opphaldsrom_varme
+        temperature: 22
+        operation_mode: Heat
+
+- alias: Somebody came home, heating on
+  trigger:
+    - platform: state
+      entity_id: device_tracker.pixel2xl
+      to: 'home'
+    - platform: state
+      entity_id: device_tracker.nataliaiphone
+      to: 'home'
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: 'device_tracker.pixel2xl'
+        state: 'not_home'
+      - condition: state
+        entity_id: 'device_tracker.nataliaiphone'
+        state: 'not_home'
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.soverom_varme
+        temperature: 17
+        operation_mode: Heat
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.opphaldsrom_varme
+        temperature: 22
+        operation_mode: Heat
