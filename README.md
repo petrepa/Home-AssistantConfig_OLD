@@ -69,5 +69,5 @@ Some screenshots of my other views.
 * [Lock](https://github.com/petrepa/Home-AssistantConfig/blob/master/automations/lock.yaml)
   * Night - The door locks itself at night
 * [Plant](https://github.com/petrepa/Home-AssistantConfig/blob/master/automations/plant_alert.yaml)
-  * Alert - I get an alert on my phone it the big plant needs to be watered. Plan to expand this in the future to prevent that our plants die
+  * Alert - I get an alert on my phone if the big plant needs to be watered. Plan to expand this in the future to prevent that our plants die
   
