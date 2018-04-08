@@ -17,20 +17,21 @@ Some screenshots of my other views.
 - Google Chromecast 2nd generation
 - Google Home
 - Philips Hue Bridge
-- Philips Hue Lightstrip Plus
-- Philips Hue Colour Bulbs
-- Ikea Trådfri connected to the Hue system
+  - Philips Hue Lightstrip Plus
+  - Philips Hue Colour Bulbs
+  - Ikea Trådfri (connected to the Hue system)
 - Nest Protect
 - Netatmo Weather Station
-- Sonos Playbar
-- Sonos Play:1
-- Sonos Connect
+- Sonos
+  - Sonos Playbar
+  - Sonos Play:1
+  - Sonos Connect
 - Samsung UE49KS7005
 - Sesame Smart Lock
 - Xiaomi Smart Home Gateway
-- Xiaomi Magnetic Door/Window Sensor
-- Xiaomi Mi Flora Sensor
-- Xiaomi Temperature and Humidity Sensor
+  - Xiaomi Magnetic Door/Window Sensor
+  - Xiaomi Mi Flora Sensor
+  - Xiaomi Temperature and Humidity Sensor
 - NetGear Router
 - TP-Link HS100
 - BroadLink SP2
