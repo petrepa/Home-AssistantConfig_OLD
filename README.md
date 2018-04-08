@@ -34,5 +34,6 @@ Some screenshots of my other views.
 - NetGear Router
 - TP-Link HS100
 - BroadLink SP2
+- Mill 900W Wifi electric heater (the Mill app sucks, so just using one of the smart plugs with it to controll it using the climate component in HA)
 - MagicMirror
 - Various DIY projects using ESP8266
