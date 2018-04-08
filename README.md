@@ -1,7 +1,7 @@
 # Home Assistant Configuration
 This is how my Home Assistant configuration is set up. Hope this can be for inspiration for other users of the platform, as the many other repositories on GitHub has helped me on my home automation journey.
 
-The setup is running on a Raspberry Pi 3 Model B, and as of this commit it is runing on HA version __0.66.1__.
+The setup is running on a Raspberry Pi 3 Model B, and as of this commit it is running on HA version __0.66.1__.
 
 This is how my default view looks, where I can controll the most important stuff.
 ![default view](https://github.com/petrepa/Home-AssistantConfig/blob/master/screenshots/1_default_view.png)
@@ -50,9 +50,9 @@ Some screenshots of my other views.
   * Night Mode - In the evening the Sonos Playbar in the living room turnes the night mode on to suppress louder sounds
   * Welcome Home - A fun automation that is normally off. The idea is when Natalia gets home, the Google Home will welcome her as she walks in the door
 * [Away Mode](https://github.com/petrepa/Home-AssistantConfig/blob/master/automations/away_mode.yaml)
-  * Away Mode - When nobody is at home the lights turn off, the heating lowers, the Sonos' stops playing, the TV turn off and I get a nitification on my phone that Papki, our apartment, is in away mode
+  * Away Mode - When nobody is at home the lights turns off, the heating lowers, the Sonos' stops playing, the TV turn off and I get a notification on my phone that Papki, our apartment, is in away mode
 * [Bathroom](https://github.com/petrepa/Home-AssistantConfig/blob/master/automations/bathroom.yaml)
-  * Greeting - A fun automation made just to annoy Natalia a bit. When the door gets opened, you will be welcomed to the bathroom, so you can have a nice start doing your important business
+  * Greeting - A fun automation made just to annoy Natalia a bit. When the door gets opened, you will be welcomed to the bathroom, so you can have a nice start while doing your important business
 * [Bed Button](https://github.com/petrepa/Home-AssistantConfig/blob/master/automations/bed_button.yaml) - Our bed has a Xiaomi button mounted on it to controll our IKEA Trådfri bulbs on our nightstands
   * Single Click - Toggle Natalia nightstand
   * Double Click - Toggle Peter nightstand
