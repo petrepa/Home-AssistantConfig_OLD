@@ -9,7 +9,7 @@ This is how my default view looks, where I can controll the most important stuff
 Some screenshots of my other views.
 ![lights](https://github.com/petrepa/Home-AssistantConfig/blob/master/screenshots/2_lights.png)
 ![doors](https://github.com/petrepa/Home-AssistantConfig/blob/master/screenshots/3_doors.png)
-![sonos](https://github.com/petrepa/Home-AssistantConfig/blob/master/screenshots/4_sonos.png)
+![sonos](https://github.com/petrepa/Home-AssistantConfig/blob/master/screenshots/4_sonos_2.png)
 ![cast](https://github.com/petrepa/Home-AssistantConfig/blob/master/screenshots/5_cast.png)
 ![system](https://github.com/petrepa/Home-AssistantConfig/blob/master/screenshots/6_system.png)
 ![test](https://github.com/petrepa/Home-AssistantConfig/blob/master/screenshots/7_test.png)
