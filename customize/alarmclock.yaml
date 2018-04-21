@@ -17,8 +17,8 @@ input_number.alarm_clock_minute:
   friendly_name: 'Minutt'
   icon: mdi:timer
 input_boolean.alarm_clock_status:
-  friendly_name: 'Vekkarklokke-status'
-  icon: mdi:alarm-check
+  friendly_name: 'Aktiver lys'
+  icon: mdi:lightbulb-on-outline
 input_boolean.alarm_clock_blind:
   friendly_name: Aktiver rullgardin
   icon: mdi:blinds

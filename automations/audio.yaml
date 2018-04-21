@@ -1,4 +1,4 @@
-  - alias: 'Night mode Playbar'
+  - alias: 'Night mode Playbar on'
     trigger:
       - platform: time
         at: '23:00:00'
@@ -8,7 +8,18 @@
           entity_id: media_player.opphaldsrom
           night_sound: yes
 
+  - alias: 'Night mode Playbar off'
+    trigger:
+      - platform: time
+        at: '07:00:00'
+    action:
+      - service: media_player.sonos_set_option
+        data:
+          entity_id: media_player.opphaldsrom
+          night_sound: no
+
   - alias: 'Welcome home'
+    initial_state: False
     trigger:
       - platform: state
         entity_id: device_tracker.nataliaiphone
@@ -22,3 +33,44 @@
         data:
           message: 'Velkomen heim, Natalia!'
           language: 'no'
+
+  - alias: "Living room CO2 warning"
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.netatmo_opphaldsrom_co2
+        above: 1200
+    condition:
+      condition: and
+      conditions:
+        - condition: template
+          value_template: '{% if states.automation.living_room_co2_warning.attributes.last_triggered %} {{(as_timestamp(now())-as_timestamp(states.automation.living_room_co2_warning.attributes.last_triggered)) > 3600 }}  {% else %}  true {% endif %}'
+        - condition: time
+          after: '10:00:00'
+          before: '22:00:00'
+    action:
+    - service: tts.google_say
+      entity_id: media_player.living_room_speaker
+      data_template:
+        message: 'You might want to open a window in the living room, since the CO2 level is {{states.sensor.netatmo_opphaldsrom_co2.state | float | round(0)}} parts per million.'
+        cache: false
+
+  - alias: "Living room CO2 back to normal"
+    initial_state: False
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.netatmo_opphaldsrom_co2
+        below: 900
+    condition:
+      condition: and
+      conditions:
+        - condition: template
+          value_template: '{% if states.automation.living_room_co2_back_to_normal.attributes.last_triggered %} {{(as_timestamp(now())-as_timestamp(states.automation.living_room_co2_back_to_normal.attributes.last_triggered)) > 1800 }}  {% else %}  true {% endif %}'
+        - condition: time
+          after: '10:00:00'
+          before: '22:00:00'
+    action:
+    - service: tts.google_say
+      entity_id: media_player.living_room_speaker
+      data_template:
+        message: 'You can now close the window if you want to, since the CO2 level is {{states.sensor.netatmo_opphaldsrom_co2.state | float | round(0)}} parts per million.'
+        cache: false

@@ -1,0 +1,8 @@
+  - platform: template
+    sensors:
+      tv_app_name:
+        friendly_name: TV playing
+        entity_id: media_player.tv
+        unit_of_measurement: ''
+        value_template: >-
+            {{ states.media_player.tv.attributes.app_name }}

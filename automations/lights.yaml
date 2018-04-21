@@ -34,3 +34,12 @@
   action:
     service: scene.turn_on
     entity_id: scene.nattlys
+
+- alias: Disable Xiaomi gateway light
+  trigger:
+    platform: state
+    entity_id: light.gateway_light_34ce00909f02
+    to: 'on'
+  action:
+    service: light.turn_off
+    entity_id: light.gateway_light_34ce00909f02

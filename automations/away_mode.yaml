@@ -36,7 +36,8 @@
       entity_id: lock.door
     - service: media_player.turn_off
       entity_id: media_player.samsung_7_series_49_ue49ks7005
-    - service: notify.notifier_peter
+    - service: notify.notifier_html_peter_unnamed_device_3
       data:
         message: "Papki er no i bortemodus"
         title: "Bortemodus!"
+        target: "unnamed device 3"

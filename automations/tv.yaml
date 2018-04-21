@@ -1,0 +1,35 @@
+- alias: "Movie paused/stopped"
+  trigger:
+    - platform: state
+      entity_id: media_player.tv
+      from: 'playing'
+      to: 'paused'
+  condition:
+    - condition: state
+      entity_id: sensor.tv_app_name
+      state: 'Google Play Movies'
+  action:
+    - service: light.turn_on
+      entity_id: light.opphaldsrom
+
+- alias: "Movie playing"
+  trigger:
+    - platform: state
+      entity_id: media_player.tv
+      from: 'paused'
+      to: 'playing'
+    - platform: state
+      entity_id: media_player.tv
+      from: 'idle'
+      to: 'playing'
+    - platform: state
+      entity_id: media_player.tv
+      from: 'off'
+      to: 'playing'
+  condition:
+    - condition: state
+      entity_id: sensor.tv_app_name
+      state: 'Google Play Movies'
+  action:
+    - service: light.turn_off
+      entity_id: light.opphaldsrom

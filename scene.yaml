@@ -1,6 +1,34 @@
-  - name: nattlys
+  - name: Nattlys opphaldsrom tak
     entities:
       light.tak:
         state: on
-        brightness: 0
-        xy_color: [0.5609,0.4042]
+        brightness: 1
+        xy_color: [0.441,0.52]
+
+  - name: Nattlys opphaldsrom overalt
+    entities:
+      light.opphaldsrom:
+        state: on
+        brightness: 1
+        xy_color: [0.441,0.52]
+
+  - name: Ettermiddag opphaldsrom overalt
+    entities:
+      light.opphaldsrom:
+        state: on
+        brightness: 254
+        xy_color: [0.345,0.515]
+
+  - name: Kveld opphaldsrom overalt
+    entities:
+      light.opphaldsrom:
+        state: on
+        brightness: 77
+        xy_color: [0.345,0.515]
+
+  - name: Dag opphaldsrom overalt
+    entities:
+      light.opphaldsrom:
+        state: on
+        brightness: 254
+        xy_color: [0.394,0.554]

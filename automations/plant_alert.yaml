@@ -1,3 +1,6 @@
+#-------------------------------------------------------------------------
+# BIG PLANT
+#-------------------------------------------------------------------------
 - alias: The big plant needs water
   trigger:
     - platform: numeric_state
@@ -8,7 +11,62 @@
     entity_id: device_tracker.801kpae1469312
     state: 'home'
   action:
-    - service: notify.notifier_peter
+    - service: notify.notifier_html_peter_unnamed_device_3
       data:
-        message: "Storeplanta må vatnast!"
-        title: "Plantepleie"
+        title: "Storeplanta treng pleie!!"
+        message: "Den treng meir vatn"
+        target: "unnamed device 3"
+
+- alias: The big plant needs fertilization
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.flower_1_conductivity
+      below: 350
+  condition:
+    condition: state
+    entity_id: device_tracker.801kpae1469312
+    state: 'home'
+  action:
+    - service: notify.notifier_html_peter_unnamed_device_3
+      data:
+        title: "Storeplanta treng pleie!!"
+        message: "Den treng meir gjødsel"
+        target: "unnamed device 3"
+
+
+
+
+#-------------------------------------------------------------------------
+# LITTLE PLANT
+#-------------------------------------------------------------------------
+- alias: The little plant needs water
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.flower_2_moisture
+      below: 15
+  condition:
+    condition: state
+    entity_id: device_tracker.pixel2xl
+    state: 'home'
+  action:
+    - service: notify.notifier_html_peter_unnamed_device_3
+      data:
+        title: "Lisjelanta treng pleie!!"
+        message: "Den treng meir vatn"
+        target: "unnamed device 3"
+
+- alias: The little plant needs fertilization
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.flower_2_conductivity
+      below: 350
+  condition:
+    condition: state
+    entity_id: device_tracker.pixel2xl
+    state: 'home'
+  action:
+    - service: notify.notifier_html_peter_unnamed_device_3
+      data:
+        title: "Lisjelanta treng pleie!!"
+        message: "Den treng meir gjødsel"
+        target: "unnamed device 3"

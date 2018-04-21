@@ -1,0 +1,80 @@
+# Automation groups
+# ------------------------------------------------------------------------
+auto_alarm_clock:
+  name: Alarm Clock
+  entities:
+    - automation.make_sound_with_alarm_clock
+    - automation.open_blinds_with_alarm_clock
+    - automation.hue_light_on_gradually_with_alarm
+
+auto_arriving_home:
+  name: Arrival
+  entities:
+    - automation.peter_arrives_welcome_him
+    - automation.peter_came_home_door_actions
+  
+auto_audio:
+  name: Audio
+  entities:
+    - automation.night_mode_playbar_on
+    - automation.night_mode_playbar_off
+    - automation.welcome_home
+    - automation.living_room_co2_warning
+    - automation.living_room_co2_back_to_normal
+
+auto_away_mode:
+  name: Away Mode
+  entities:
+    - automation.away_mode
+
+
+auto_bathroom:
+  name: Bathroom
+  entities:
+    - automation.if_the_bathroom_door_is_opened_turn_on_the_light
+    - automation.bathroom_humidity_high
+
+auto_bed_button:
+  name: Bed Button
+  entities:
+    - automation.double_click_to_toggle_peter_nightstand
+    - automation.single_click_to_toggle_peter_nightstand
+    - automation.long_press_to_toggle_bedroom_lights
+
+auto_heating:
+  name: Heating
+  entities:
+    - automation.night_time_turn_living_room_heat_down
+    - automation.day_time_turn_living_room_heat_up
+    - automation.somebody_came_home_heating_on
+
+auto_ipad_notification:
+  name: iPad Notification
+  entities:
+    - automation.charge_ipad_notification
+
+auto_lights:
+  name: Lights
+  entities:
+    - automation.if_the_bedroom_door_is_opened_and_it_is_daytime_turn_on_the_living_room_lights
+    - automation.if_the_bedroom_door_is_opened_and_it_is_night_time_turn_on_the_living_room_lights_nightly
+    - automation.disable_xiaomi_gateway_light
+
+auto_lock:
+  name: Lock
+  entities:
+    - automation.lock_the_door_at_night
+
+auto_plant_alert:
+  name: Plants
+  entities:
+    - automation.the_big_plant_needs_water
+    - automation.the_big_plant_needs_fertilization
+    - automation.the_little_plant_needs_fertilization
+    - automation.the_little_plant_needs_water
+
+auto_tv:
+  name: TV
+  entities:
+    - automation.movie_pausedstopped
+    - automation.movie_playing

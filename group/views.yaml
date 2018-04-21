@@ -4,15 +4,12 @@ default_view:
     icon: mdi:home-assistant
     entities:
       - group.soverom
+      - group.opphalds_varme
+      - group.bad
       - group.alarm_clock
       - group.sporing
-      - group.netatmo_inne
-      - group.netatmo_ute
-      - group.flower_sensor_1
-      - group.flower_sensor_2
+      - group.straum
       - group.nest
-      - group.vaer
-      - group.opphalds_varme
 
 light:
   name: Lys
@@ -26,6 +23,7 @@ light:
     - group.tv
     - group.kitchen
     - group.bad_brytar
+    - group.scener
 
 doors:
   name: Dører
@@ -44,14 +42,21 @@ sonos:
     - media_player.kontor
     - media_player.soverom
     - media_player.bad
-
-cast:
-  name: Google Cast
-  icon: mdi:cast
-  view: yes
-  entities:
     - media_player.living_room_speaker 
     - media_player.tv
+
+klima:
+  name: Klima
+  icon: mdi:thermometer
+  view: yes
+  entities:
+    - group.netatmo_inne
+    - group.netatmo_ute
+    - group.soverom_temp
+    - group.bad_temp
+    - group.vaer
+    - group.flower_sensor_1
+    - group.flower_sensor_2
 
 System:
     name: System
@@ -62,22 +67,25 @@ System:
       - group.system_group
       - group.speedtest
       - light.gateway_light_34ce00909f02
-      - automation.if_the_bathroom_door_is_opened_make_a_greeting
-      - automation.if_the_bathroom_door_is_opened_turn_on_the_light
-      - automation.away_mode
-      - automation.double_click_to_toggle_peter_nightstand
-      - automation.if_the_bedroom_door_is_opened_and_it_is_daytime_turn_on_the_living_room_lights
-      - automation.if_the_bedroom_door_is_opened_and_it_is_night_time_turn_on_the_living_room_lights_nightly
-      - automation.long_press_to_toggle_bedroom_lights
-      - automation.single_click_to_toggle_peter_nightstand
-      - automation.somebody_came_home_bedroom_heating_on  
-      - automation.the_big_plant_needs_water
-      - automation.make_sound_with_alarm_clock
-      - automation.open_blinds_with_alarm_clock
-      - automation.charge_ipad_notification
-      - automation.night_mode_playbar
-      - automation.welcome_home
-      - automation.lock_the_door_at_night
+
+
+automation:
+    name: Automasjonar
+    icon: mdi:robot
+    view: yes
+    entities:
+      - group.auto_alarm_clock
+      - group.auto_arriving_home
+      - group.auto_audio
+      - group.auto_away_mode
+      - group.auto_bathroom
+      - group.auto_bed_button
+      - group.auto_heating
+      - group.auto_ipad_notification
+      - group.auto_lights
+      - group.auto_lock
+      - group.auto_plant_alert
+      - group.auto_tv
 
 Test:
   name: Test

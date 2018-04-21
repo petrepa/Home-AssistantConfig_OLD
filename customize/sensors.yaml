@@ -169,6 +169,13 @@ sensor.humidity_158d0001f53fa9:
   friendly_name: Fuktigheit
   icon: mdi:water-percent
 
+sensor.temperature_158d0002227de2:
+  friendly_name: Temperatur
+
+sensor.humidity_158d0002227de2:
+  friendly_name: Fuktigheit
+  icon: mdi:water-percent
+
 binary_sensor.door_window_sensor_158d0001bf2cc7:
   friendly_name: Soverom 
   icon: mdi:door-open
@@ -176,3 +183,7 @@ binary_sensor.door_window_sensor_158d0001bf2cc7:
 binary_sensor.door_window_sensor_158d0001ab77b8:
   friendly_name: Bad
   icon: mdi:door-open
+
+sensor.electricity_price_kirkegata_46:
+  friendly_name: Pris
+  icon: mdi:flash

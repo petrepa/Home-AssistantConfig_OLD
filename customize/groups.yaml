@@ -10,7 +10,7 @@ group.door_group:
   control: hidden
 
 group.netatmo_inne:
-  friendly_name: Inne
+  friendly_name: Opphaldsrom
 
 group.netatmo_ute:
   friendly_name: Ute
@@ -47,7 +47,7 @@ group.soverom_lys:
   icon: mdi:hotel
 
 group.vaer:
-  friendly_name: Vær  
+  friendly_name: Vêr  
 
 group.nest:
   friendly_name: Røykvarslar
@@ -58,3 +58,7 @@ group.door_status:
 group.soverom:
   friendly_name: Soverom
   assumed_state: false
+
+group.soverom_temp:
+  assumed_state: false
+  friendly_name: Soverom

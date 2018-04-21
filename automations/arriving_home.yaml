@@ -1,0 +1,61 @@
+- alias: 'Peter arrives, welcome him'
+  trigger:
+    - platform: state
+      entity_id: device_tracker.pixel2xl
+      from: 'not_home'
+      to: 'home'
+  condition:
+    condition: state
+    entity_id: device_tracker.nataliaiphone
+    state: 'not_home'
+  action:
+  - wait_template: "{{ is_state('lock.door', 'unlocked') }}"
+    timeout: 00:05:00 
+  - service: tts.google_say
+    entity_id: media_player.living_room_speaker
+    data:
+      message: 'Velkomen heim, Peter!'
+      language: 'no'
+  - service: light.turn_on
+    entity_id: light.opphaldsrom
+
+
+- alias: "Peter came home, door actions"
+  trigger:
+    platform: state
+    entity_id: device_tracker.pixel2xl
+    to: 'home'
+  action:
+    service: notify.notifier_html_peter_unnamed_device_3
+    data:
+      message: "Vil du opne dørene?"
+      title: "Velkomen heim!"
+      target: "unnamed device 3"
+      data:
+        actions:
+          - action: "open_frontdoor"
+            title: "Opne ytterdøra"
+            icon: mdi:door
+          - action: "open_door"
+            title: "Opne døra"
+            icon: mdi:door
+
+- alias: "Opne ytterdøra ved html5-handling"
+  trigger:
+    platform: event
+    event_type: html5_notification.clicked
+    event_data:
+      action: open_frontdoor
+  action:
+    service: switch.turn_on
+    entity_id: switch.mqtt_switch
+
+- alias: "Opne døra ved html5-handling"
+  trigger:
+    platform: event
+    event_type: html5_notification.clicked
+    event_data:
+      action: open_door
+  action:
+    service: lock.unlock
+    entity_id: lock.door

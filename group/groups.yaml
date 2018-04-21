@@ -24,6 +24,7 @@ netatmo_inne:
   - sensor.netatmo_opphaldsrom_noise
   - sensor.netatmo_opphaldsrom_pressure
   - sensor.netatmo_opphaldsrom_wifi
+  - sensor.illumination_34ce00909f02
 
 netatmo_ute:
   - sensor.netatmo_ute_temperature
@@ -102,16 +103,21 @@ vaer:
 
 soverom_temp:
   - sensor.temperature_158d0001f53fa9
-  - sensor.illumination_34ce00909f02
   - sensor.humidity_158d0001f53fa9
 
+bad_temp:
+  name: Bad
+  entities:
+    - sensor.temperature_158d0002227de2
+    - sensor.humidity_158d0002227de2
+
 soverom:
-  - sensor.temperature_158d0001f53fa9
-  - sensor.illumination_34ce00909f02
-  - sensor.humidity_158d0001f53fa9
-  - switch.soverom_ovn
-  - climate.soverom_varme
-  - cover.rullgardin
+  control: hidden
+  entities:
+    - switch.soverom_ovn
+    - climate.soverom_varme
+    - cover.rullgardin
+    - light.soverom
 
 door_status:
   - binary_sensor.door_window_sensor_158d0001ab77b8
@@ -130,10 +136,27 @@ alarm_clock:
 
 opphalds_varme:
   name: Opphaldsrom
+  control: hidden
   entities:
     - switch.opphalds_ovn
-    - climate.opphaldsrom_varme
+    - climate.opphaldsrom_varme    
+    - light.opphaldsrom
 
+straum:
+  name: Straum
+  entities:
+    - sensor.electricity_price_kirkegata_46
 
+scener:
+  name: Scener
+  entities:
+    - scene.dag_opphaldsrom_overalt
+    - scene.ettermiddag_opphaldsrom_overalt
+    - scene.kveld_opphaldsrom_overalt
+    - scene.nattlys_opphaldsrom_overalt
+    - scene.nattlys_opphaldsrom_tak
 
-
+bad:
+  name: Bad
+  entities:
+    - sensor.temperature_158d0002227de2

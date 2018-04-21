@@ -14,3 +14,36 @@
       entity_id: media_player.bad
       data_template:
         message: 'Welcome to the bathroom!'
+
+
+
+- alias: "Bathroom humidity high"
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.humidity_158d0002227de2
+      above: 60
+  action:
+    - service: media_player.sonos_snapshot
+      data_template:
+        entity_id: "media_player.bad"
+    - service: media_player.media_pause
+      entity_id: "media_player.bad"
+    - service: tts.google_say
+      data_template:
+        entity_id: "media_player.bad"
+        message: "You might want to turn the fan on, since the humidity is {{states.sensor.humidity_158d0002227de2.state | float | round(0)}} percent."
+    - delay:
+        seconds: 5
+    - delay: >-
+        {% set duration = states.media_player.bad.attributes.media_duration %}
+        {% if duration > 0 %}
+          {% set duration = duration - 5 %}
+        {% endif %}
+        {% set seconds = duration % 60 %}
+        {% set minutes = (duration / 60)|int % 60 %}
+        {% set hours = (duration / 3600)|int %}
+        {{ [hours, minutes, seconds]|join(':') }}
+    - service: media_player.sonos_restore
+      data_template:
+        entity_id: "media_player.bad"
+

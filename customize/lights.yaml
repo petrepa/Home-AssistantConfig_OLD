@@ -15,8 +15,7 @@ light.pult:
   icon: mdi:led-strip
 
 light.soverom:
-  friendly_name: Tak
-  icon: mdi:ceiling-light
+  friendly_name: Lys
 
 light.tvbenk:
   friendly_name: Benklampe
@@ -55,3 +54,10 @@ light.nattbord_peter:
 
 light.nattbord_natalia:
   icon: mdi:lamp
+
+light.opphaldsrom:
+  friendly_name: Lys
+
+light.soverom_2:
+  friendly_name: Tak
+  icon: mdi:ceiling-light

@@ -21,6 +21,7 @@ http:
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
 
+
 # Checks for available updates
 # Note: This component will send some information about your system to
 # the developers to assist with development of Home Assistant.
@@ -93,7 +94,7 @@ switch:
     host: 192.168.1.11
   - platform: broadlink
     host: 192.168.1.37
-    mac: !seret BL_mac
+    mac: !secret BL_mac
     type: sp2
     friendly_name: ‘opphalds_ovn’
   - platform: flux
@@ -118,6 +119,10 @@ notify:
   - name: NOTIFIER_peter
     platform: pushbullet
     api_key: !secret pb_key
+  - name: NOTIFIER_html_peter
+    platform: html5
+    gcm_api_key: !secret gcm-server-key
+    gcm_sender_id: !secret gcm-sender-id
 
 cover:
   - platform: mqtt
@@ -138,6 +143,11 @@ climate:
     heater: switch.opphalds_ovn
     target_sensor: sensor.netatmo_opphaldsrom_temperature
     away_temp: 10
+  - platform: generic_thermostat
+    name: Utetemperatur
+    heater: input_boolean.climate_dummy
+    target_sensor: sensor.netatmo_ute_temperature
+    
 
 input_number:
   alarm_clock_hour:
@@ -158,6 +168,8 @@ input_boolean:
     initial: on
   alarm_clock_sonos:
     initial: on
+  climate_dummy:
+    initial: off
 
 google_assistant:
   project_id: !secret GA_pro_id
@@ -170,6 +182,7 @@ google_assistant:
     - script
     - cover
     - climate
+    - scene
 
 
 zone: !include zones.yaml
@@ -177,3 +190,4 @@ sensor: !include_dir_merge_list sensor
 group: !include_dir_merge_named group
 automation: !include_dir_merge_list automations
 script: !include scripts.yaml
+scene: !include scene.yaml
