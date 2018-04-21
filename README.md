@@ -41,8 +41,7 @@ Some screenshots of my other views.
 - TP-Link HS100
 - BroadLink SP2
 - Mill 900W Wifi electric heater (the Mill app sucks, so just using one of the smart plugs with it to controll it using the climate component in HASS)
-- MagicMirror
-- Various DIY projects using ESP8266
+- DIY projects
 
 ## Automations
 * [Alarm Clock](https://github.com/petrepa/Home-AssistantConfig/blob/master/automations/alarm_clock.yaml)
@@ -85,5 +84,5 @@ Some screenshots of my other views.
   
 ## DIY Projects
 * [MagicMirror](https://github.com/petrepa/MagicMirror)
-* Motorized roller blind
-* Apartment building door opener
+* [Motorized roller blind](https://github.com/petrepa/rollerblind)
+* [Apartment building door opener](https://github.com/petrepa/Dooropener)
