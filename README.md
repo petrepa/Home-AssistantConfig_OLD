@@ -82,3 +82,8 @@ Some screenshots of my other views.
   * Alert - I get an alert on my phone if the plants needs to be watered or fertilized. Plan to expand this in the future to prevent that our plants die.
 * [TV](https://github.com/petrepa/Home-AssistantConfig/blob/master/automations/tv.yaml)
   * Movie - When there is a movie paying on the Chromecast, the light turns off. If the movie is paused or stopped, the light comes back on. This automation only triggers if the app name is 'Google Play Movies'. This is because we use the Chromecast throughout the day, and it would be really annoying if the lights turned off every time I was watching a YouTube video. When we watch movies we are 99% of the time watching it together and using Google Play.
+  
+## DIY Projects
+* [MagicMirror](https://github.com/petrepa/MagicMirror)
+* Motorized roller blind
+* Apartment building door opener
