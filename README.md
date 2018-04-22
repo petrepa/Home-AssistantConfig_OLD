@@ -41,7 +41,10 @@ Some screenshots of my other views.
 - TP-Link HS100
 - BroadLink SP2
 - Mill 900W Wifi electric heater (the Mill app sucks, so just using one of the smart plugs with it to controll it using the climate component in HASS)
-- DIY projects
+- DIY projects - described below
+
+## Services
+- Tibber - Power provider which gives me real time electricity costs 
 
 ## Automations
 * [Alarm Clock](https://github.com/petrepa/Home-AssistantConfig/blob/master/automations/alarm_clock.yaml)
