@@ -89,3 +89,4 @@ Some screenshots of my other views.
 * [MagicMirror](https://github.com/petrepa/MagicMirror)
 * [Motorized roller blind](https://github.com/petrepa/rollerblind)
 * [Apartment building door opener](https://github.com/petrepa/Dooropener)
+* [Smart Table Fan](https://github.com/petrepa/MQTT-Table-Fan)
