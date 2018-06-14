@@ -90,3 +90,4 @@ Some screenshots of my other views.
 * [Motorized roller blind](https://github.com/petrepa/rollerblind)
 * [Apartment building door opener](https://github.com/petrepa/Dooropener)
 * [Smart Table Fan](https://github.com/petrepa/MQTT-Table-Fan)
+* [Bed occupancy sensor](https://wirres.net/article/articleview/10972/1/6/)
