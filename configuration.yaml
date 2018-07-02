@@ -20,6 +20,8 @@ http:
   base_url: !secret base_url
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
+  cors_allowed_origins:
+  - !secret cors_url
 
 
 # Checks for available updates
@@ -56,6 +58,7 @@ tts:
 # Cloud
 cloud:
 
+
 mqtt:
   broker: core-mosquitto
   username: !secret mqtt_name
@@ -83,6 +86,7 @@ device_tracker:
     username: !secret iC_name
     password: !secret iC_pw
     account_name: iCloud_peter
+  - platform: bluetooth_tracker
 
 switch:
   - platform: mqtt
@@ -91,12 +95,17 @@ switch:
     payload_on: 1
     payload_off: 0
   - platform: tplink
-    host: 192.168.1.11
+    host: 192.168.1.13
   - platform: broadlink
-    host: 192.168.1.37
-    mac: !secret BL_mac
+    host: 192.168.1.11
+    mac: !secret BL_mac1
     type: sp2
     friendly_name: ‘opphalds_ovn’
+  - platform: broadlink
+    host: 192.168.1.12
+    mac: !secret BL_mac2
+    type: sp3
+    friendly_name: 'test'
   - platform: flux
     lights:
       - group.all_lights
@@ -110,10 +119,6 @@ nest:
       - 'smoke_status'
       - 'battery_health'
 
-xiaomi_aqara:
-  discovery_retry: 5
-  gateways:
-    - key: !secret xia_key
 
 notify:
   - name: NOTIFIER_peter
@@ -183,6 +188,42 @@ google_assistant:
     - cover
     - climate
     - scene
+
+
+fan:
+  - platform: mqtt
+    name: "MQTT-vifte"
+    state_topic: "fan/status"
+    command_topic: "fan/status"
+    speed_state_topic: "fan/status"
+    speed_command_topic: "fan/status"
+    payload_off: 0
+    payload_on: 2
+    payload_low_speed: 2
+    payload_high_speed: 1
+    speeds:
+      - low
+      - high
+
+binary_sensor:
+  - platform: template
+    sensors:
+      bed_sensor:
+        friendly_name: "Sengesensor"
+        device_class: occupancy
+        value_template: >-
+          {% if states('sensor.vekt_pa_senga')|float < 220 %}
+          True
+          {% else %}
+          False
+          {% endif %}
+        icon_template: >-
+          {% if states('sensor.vekt_pa_senga')|float < 220 %}
+            mdi:hotel
+          {% else %}
+            mdi:bed-empty
+          {% endif %}
+
 
 
 zone: !include zones.yaml

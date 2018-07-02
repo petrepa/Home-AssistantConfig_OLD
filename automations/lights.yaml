@@ -33,7 +33,64 @@
     before: '06:30:00'
   action:
     service: scene.turn_on
-    entity_id: scene.nattlys
+    entity_id: scene.nattlys_opphaldsrom_overalt
+
+- alias: If there is motion in bedroom, turn the lights on
+  trigger:
+    platform: state
+    entity_id:  binary_sensor.motion_sensor_158d0001e635e3
+    from: 'off'
+    to: 'on'
+  condition:
+    condition: time
+    # At least one of the following is required.
+    after: '08:30:00'
+    before: '22:00:00'
+  action:
+    service: light.turn_on
+    data:
+      entity_id: light.soverom
+
+- alias: If there is motion in the living room during day time, turn the lights on last state
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0002006c77
+    from: 'off'
+    to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        # At least one of the following is required.
+        after: '06:30:00'
+        before: '23:00:00'
+      - condition: state
+        entity_id: light.opphaldsrom
+        state: 'off'
+  action:
+    service: light.turn_on
+    data:
+      entity_id: light.opphaldsrom
+
+- alias: If there is motion in the living room during night time, turn the lights to night light
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0002006c77
+    from: 'off'
+    to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        # At least one of the following is required.
+        after: '23:00:00'
+        before: '06:30:00'
+      - condition: state
+        entity_id: light.opphaldsrom
+        state: 'off'
+  action:
+    service: scene.turn_on
+    entity_id: scene.nattlys_opphaldsrom_overalt
 
 - alias: Disable Xiaomi gateway light
   trigger:

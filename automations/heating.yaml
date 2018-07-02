@@ -39,19 +39,19 @@
 - alias: Somebody came home, heating on
   trigger:
     - platform: state
-      entity_id: device_tracker.pixel2xl
+      entity_id: device_tracker.pixel_2_xl
       to: 'home'
     - platform: state
-      entity_id: device_tracker.nataliaiphone
+      entity_id: device_tracker.nexus_6p
       to: 'home'
   condition:
     condition: or
     conditions:
       - condition: state
-        entity_id: 'device_tracker.pixel2xl'
+        entity_id: device_tracker.pixel_2_xl
         state: 'not_home'
       - condition: state
-        entity_id: 'device_tracker.nataliaiphone'
+        entity_id: device_tracker.nexus_6p
         state: 'not_home'
   action:
     - service: climate.set_temperature

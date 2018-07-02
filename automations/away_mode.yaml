@@ -1,21 +1,21 @@
 - alias: 'Away Mode'
   trigger:
     - platform: state
-      entity_id: device_tracker.nataliaiphone
+      entity_id: device_tracker.pixel2xl
       from: 'home'
       to: 'not_home'
     - platform: state
-      entity_id: device_tracker.pixel2xl
+      entity_id: device_tracker.pixel_2_xl
       from: 'home'
       to: 'not_home'
   condition:
     condition: and
     conditions:
       - condition: state
-        entity_id: 'device_tracker.nataliaiphone'
+        entity_id: 'device_tracker.pixel2xl'
         state: 'not_home'
       - condition: state
-        entity_id: 'device_tracker.pixel2xl'
+        entity_id: 'device_tracker.pixel_2_xl'
         state: 'not_home'
   action:
     - service: light.turn_off
@@ -35,7 +35,7 @@
     - service: lock.lock
       entity_id: lock.door
     - service: media_player.turn_off
-      entity_id: media_player.samsung_7_series_49_ue49ks7005
+      entity_id: media_player.tv
     - service: notify.notifier_html_peter_unnamed_device_3
       data:
         message: "Papki er no i bortemodus"

@@ -1,0 +1,11 @@
+- platform: mqtt
+  state_topic: "/ESP_Easy/weight/Weight"
+  name: "Vekt på senga"
+  value_template: "{{ (value | float /1000) | round(0) }}"
+  qos: 0
+  unit_of_measurement: "kg"
+  availability_topic: "/ESP_Easy/status/LWT"
+  payload_available: "Connected"
+  payload_not_available: "Connection Lost"
+
+

@@ -1,0 +1,23 @@
+co2_level:
+  alias: "CO2 nivåopplesing"
+  sequence:
+    - service: media_player.volume_set
+      data_template:
+        entity_id: media_player.living_room_speaker
+        volume_level: 0.5
+    - service: tts.google_say
+      data_template:
+        entity_id: media_player.living_room_speaker
+        message: "{{states.sensor.netatmo_opphaldsrom_co2.state | float | round(0)}} parts per million"
+
+out_temp:
+  alias: "Utetemperaturopplesing"
+  sequence:
+    - service: media_player.volume_set
+      data_template:
+        entity_id: media_player.living_room_speaker
+        volume_level: 0.5
+    - service: tts.google_say
+      data_template:
+        entity_id: media_player.living_room_speaker
+        message: "{{states.sensor.netatmo_ute_temperature.state | float | round(0)}} degrees"

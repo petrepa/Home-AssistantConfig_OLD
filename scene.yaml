@@ -3,32 +3,39 @@
       light.tak:
         state: on
         brightness: 1
-        xy_color: [0.441,0.52]
+        color_temp: 447
 
   - name: Nattlys opphaldsrom overalt
     entities:
       light.opphaldsrom:
         state: on
         brightness: 1
-        xy_color: [0.441,0.52]
+        color_temp: 447
 
   - name: Ettermiddag opphaldsrom overalt
     entities:
       light.opphaldsrom:
         state: on
         brightness: 254
-        xy_color: [0.345,0.515]
+        color_temp: 366
 
   - name: Kveld opphaldsrom overalt
     entities:
       light.opphaldsrom:
         state: on
         brightness: 77
-        xy_color: [0.345,0.515]
+        xy_color: [0.459,0.408]
 
   - name: Dag opphaldsrom overalt
     entities:
       light.opphaldsrom:
         state: on
         brightness: 254
-        xy_color: [0.394,0.554]
+        xy_color: [0.37,0.372]
+
+  - name: Nattlys peter
+    entities:
+      light.nattbord_peter:
+        state: on
+        brightness: 1
+        color_temp: 447

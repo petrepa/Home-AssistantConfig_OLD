@@ -53,7 +53,7 @@ group.nest:
   friendly_name: Røykvarslar
 
 group.door_status:
-  friendly_name: Status
+  friendly_name: Dører
 
 group.soverom:
   friendly_name: Soverom

@@ -11,7 +11,7 @@
   action:
     - service: light.turn_on
       data: 
-        entity_id: light.nattbord_peter
+        entity_id: light.soverom
         brightness: 255
         transition: 10
 

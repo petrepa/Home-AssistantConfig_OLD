@@ -8,8 +8,6 @@ default_view:
       - group.bad
       - group.alarm_clock
       - group.sporing
-      - group.straum
-      - group.nest
 
 light:
   name: Lys
@@ -32,6 +30,8 @@ doors:
   entities:
     - group.door_group
     - group.door_status
+    - group.seng
+    - group.rorsle
 
 sonos:
   name: Sonos
@@ -57,6 +57,7 @@ klima:
     - group.vaer
     - group.flower_sensor_1
     - group.flower_sensor_2
+    - group.nest
 
 System:
     name: System
@@ -67,6 +68,11 @@ System:
       - group.system_group
       - group.speedtest
       - light.gateway_light_34ce00909f02
+      - group.all_scripts
+      - script.co2_level
+      - script.out_temp
+      - sensor.social_blade
+      - group.straum
 
 
 automation:
@@ -79,7 +85,7 @@ automation:
       - group.auto_audio
       - group.auto_away_mode
       - group.auto_bathroom
-      - group.auto_bed_button
+      - group.auto_bed
       - group.auto_heating
       - group.auto_ipad_notification
       - group.auto_lights
@@ -92,5 +98,8 @@ Test:
   view: yes
   entities:
     - switch.flux 
+    - switch.test
+    
+    
     
 

@@ -34,12 +34,13 @@ auto_bathroom:
     - automation.if_the_bathroom_door_is_opened_turn_on_the_light
     - automation.bathroom_humidity_high
 
-auto_bed_button:
-  name: Bed Button
+auto_bed:
+  name: Bed
   entities:
     - automation.double_click_to_toggle_peter_nightstand
     - automation.single_click_to_toggle_peter_nightstand
     - automation.long_press_to_toggle_bedroom_lights
+    - automation.someone_is_in_bed 
 
 auto_heating:
   name: Heating
@@ -58,6 +59,9 @@ auto_lights:
   entities:
     - automation.if_the_bedroom_door_is_opened_and_it_is_daytime_turn_on_the_living_room_lights
     - automation.if_the_bedroom_door_is_opened_and_it_is_night_time_turn_on_the_living_room_lights_nightly
+    - automation.if_there_is_motion_in_bedroom_turn_the_lights_on
+    - automation.if_there_is_motion_in_the_living_room_during_day_time_turn_the_lights_on_last_state
+    - automation.if_there_is_motion_in_the_living_room_during_night_time_turn_the_lights_to_night_light
     - automation.disable_xiaomi_gateway_light
 
 auto_lock:

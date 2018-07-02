@@ -1,8 +1,114 @@
 #GROUPS
+
+# Default view --------------------------------------------------------
+
+alarm_clock:
+  name: 'Vekkarklokke'
+  entities:
+    - sensor.alarm_clock_time
+    - input_number.alarm_clock_hour
+    - input_number.alarm_clock_minute
+    - input_boolean.alarm_clock_status
+    - input_boolean.alarm_clock_sonos
+    - input_boolean.alarm_clock_blind
+
+opphalds_varme:
+  name: Opphaldsrom
+  control: hidden
+  entities:
+    - climate.opphaldsrom_varme   
+    - fan.mqttvifte 
+    - light.opphaldsrom
+
+sporing:
+  - device_tracker.nataliainiphone
+  - device_tracker.natalia_sin_iphone
+  - device_tracker.pixel2xl
+  - device_tracker.pixel_2_xl
+
+
+soverom:
+  control: hidden
+  entities:
+    - climate.soverom_varme
+    - cover.rullgardin
+    - light.soverom
+
+bad:
+  name: Bad
+  entities:
+    - sensor.temperature_158d0002227de2
+
+
+
+# Lights --------------------------------------------------------
+rom:
+  - group.soverom_lys
+  - group.opphalds
+
+soverom_lys:
+  - light.soverom_2
+  - light.nattbord_natalia
+  - light.nattbord_peter
+
+tak:
+  - light.tak_1__dass
+  - light.tak_2__dass
+  - light.tak_3__dass
+  - light.tak_4__sov
+  - light.tak_5__soverom
+  - light.tak_6__soverom
+
+pult:
+  - light.pult__hgre
+  - light.pult__venstre
+  - light.pult
+
+tv:
+  - light.tvbenk
+  - light.tv
+
+
+opphalds:
+  - light.opphaldsrom
+  - group.kitchen
+
+scener:
+  name: Scener
+  entities:
+    - scene.dag_opphaldsrom_overalt
+    - scene.ettermiddag_opphaldsrom_overalt
+    - scene.kveld_opphaldsrom_overalt
+    - scene.nattlys_opphaldsrom_overalt
+    - scene.nattlys_opphaldsrom_tak
+
+
+# Doors, windows, occupancy and locks ------------------------------------
 door_group:
     - switch.mqtt_switch
     - lock.door
 
+rorsle:
+  name: Rørsle
+  entities:
+    - binary_sensor.motion_sensor_158d0002006c77
+    - binary_sensor.motion_sensor_158d0001e635e3
+
+seng:
+  name: Seng
+  entities:
+    - binary_sensor.bed_sensor
+    - sensor.vekt_pa_senga
+
+door_status:
+  - binary_sensor.door_window_sensor_158d0001ab77b8
+  - binary_sensor.door_window_sensor_158d0001bf2cc7
+
+
+# Media players --------------------------------------------------------
+
+
+# Climate ---------------------------------------------------------------
 flower_sensor_1:
   - sensor.flower_1_battery
   - sensor.flower_1_conductivity
@@ -32,58 +138,15 @@ netatmo_ute:
   - sensor.netatmo_ute_battery
   - sensor.netatmo_ute_radio
 
-sporing:
-  - device_tracker.nataliaiphone
-  - device_tracker.pixel2xl
+soverom_temp:
+  - sensor.temperature_158d0001f53fa9
+  - sensor.humidity_158d0001f53fa9
 
-speedtest:
-  - sensor.speedtest_download
-  - sensor.speedtest_upload
-  - sensor.speedtest_ping
-
-rom:
-  - group.soverom_lys
-  - group.opphalds
-
-opphalds:
-  - light.opphaldsrom
-  - group.kitchen
-
-soverom_lys:
-  - light.soverom_2
-  - light.nattbord_natalia
-  - light.nattbord_peter
-
-tak:
-  - light.tak_1__dass
-  - light.tak_2__dass
-  - light.tak_3__dass
-  - light.tak_4__sov
-  - light.tak_5__soverom
-  - light.tak_6__soverom
-
-pult:
-  - light.pult__hgre
-  - light.pult__venstre
-  - light.pult
-
-tv:
-  - light.tvbenk
-  - light.tv
-
-nest:
-  - sensor.bedroom_nest_protect_battery_health  
-  - sensor.bedroom_nest_protect_co_status 
-  - sensor.bedroom_nest_protect_smoke_status
-
-system_group:
-  - sensor.disk_used_percent
-  - sensor.memory_use
-  - sensor.memory_use_percent
-  - sensor.processor_use
-  - sensor.last_boot
-  - sensor.since_last_boot
-
+bad_temp:
+  name: Bad
+  entities:
+    - sensor.temperature_158d0002227de2
+    - sensor.humidity_158d0002227de2
 
 vaer:
   - sun.sun
@@ -101,62 +164,38 @@ vaer:
   - sensor.vr_wind_direction
   - sensor.vr_wind_speed
 
-soverom_temp:
-  - sensor.temperature_158d0001f53fa9
-  - sensor.humidity_158d0001f53fa9
-
-bad_temp:
-  name: Bad
-  entities:
-    - sensor.temperature_158d0002227de2
-    - sensor.humidity_158d0002227de2
-
-soverom:
-  control: hidden
-  entities:
-    - switch.soverom_ovn
-    - climate.soverom_varme
-    - cover.rullgardin
-    - light.soverom
-
-door_status:
-  - binary_sensor.door_window_sensor_158d0001ab77b8
-  - binary_sensor.door_window_sensor_158d0001bf2cc7
+nest:
+  - sensor.bedroom_nest_protect_battery_health  
+  - sensor.bedroom_nest_protect_co_status 
+  - sensor.bedroom_nest_protect_smoke_status
 
 
-alarm_clock:
-  name: 'Vekkarklokke'
-  entities:
-    - sensor.alarm_clock_time
-    - input_number.alarm_clock_hour
-    - input_number.alarm_clock_minute
-    - input_boolean.alarm_clock_status
-    - input_boolean.alarm_clock_sonos
-    - input_boolean.alarm_clock_blind
 
-opphalds_varme:
-  name: Opphaldsrom
-  control: hidden
-  entities:
-    - switch.opphalds_ovn
-    - climate.opphaldsrom_varme    
-    - light.opphaldsrom
-
+# System ------------------------------------------
 straum:
   name: Straum
   entities:
     - sensor.electricity_price_kirkegata_46
 
-scener:
-  name: Scener
-  entities:
-    - scene.dag_opphaldsrom_overalt
-    - scene.ettermiddag_opphaldsrom_overalt
-    - scene.kveld_opphaldsrom_overalt
-    - scene.nattlys_opphaldsrom_overalt
-    - scene.nattlys_opphaldsrom_tak
+speedtest:
+  - sensor.speedtest_download
+  - sensor.speedtest_upload
+  - sensor.speedtest_ping
 
-bad:
-  name: Bad
-  entities:
-    - sensor.temperature_158d0002227de2
+system_group:
+  - sensor.disk_used_percent
+  - sensor.memory_use
+  - sensor.memory_use_percent
+  - sensor.processor_use
+  - sensor.last_boot
+  - sensor.since_last_boot
+
+# Automations (own file) ---------------------------------------
+
+
+
+# Test ----------------------------------------------------------
+
+
+
+

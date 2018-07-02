@@ -1,4 +1,25 @@
 # SENSORS
+# ________SYSTEM MONITOR___________
+sensor.processor_use:
+  friendly_name: CPU-bruk
+
+sensor.disk_used_percent:
+  friendly_name: Disk-bruk
+
+sensor.memory_use:
+  friendly_name: Minnebruk
+
+sensor.memory_use_percent:
+  friendly_name: Minnebruk
+
+sensor.last_boot:
+  friendly_name: Siste oppstart
+
+sensor.since_last_boot:
+  friendly_name: Tid sidan siste oppstart
+
+
+# ________NETATMO___________
 sensor.netatmo_opphaldsrom_co2:
   friendly_name: CO2
 
@@ -17,25 +38,6 @@ sensor.netatmo_opphaldsrom_temperature:
 sensor.netatmo_opphaldsrom_wifi:
   friendly_name: WiFi
 
-sensor.processor_use:
-  friendly_name: CPU-bruk
-
-sensor.disk_used_percent:
-  friendly_name: Disk-bruk
-
-sensor.memory_use:
-  friendly_name: Minnebruk
-
-sensor.memory_use_percent:
-  friendly_name: Minnebruk
-
-
-sensor.last_boot:
-  friendly_name: Siste oppstart
-
-sensor.since_last_boot:
-  friendly_name: Tid sidan siste oppstart
-
 sensor.netatmo_ute_temperature:
   friendly_name: Temperatur
 
@@ -48,6 +50,8 @@ sensor.netatmo_ute_battery:
 sensor.netatmo_ute_radio:
   friendly_name: Signalstyrke
 
+
+# ________PLANT MONITOR___________
 sensor.flower_1_battery:
   friendly_name: Batteri
   icon: mdi:battery
@@ -66,6 +70,7 @@ sensor.flower_1_moisture:
 
 sensor.flower_1_temperature:
   friendly_name: Temperatur
+
 
 sensor.flower_2_battery:
   friendly_name: Batteri
@@ -86,6 +91,8 @@ sensor.flower_2_moisture:
 sensor.flower_2_temperature:
   friendly_name: Temperatur
 
+
+# ________SPEEDTEST___________
 sensor.speedtest_download:
   friendly_name: Nedlasting
   icon: mdi:download
@@ -97,6 +104,8 @@ sensor.speedtest_upload:
 sensor.speedtest_ping:
   friendly_name: Ping
 
+
+# ________YR___________
 sensor.vr_cloudiness:
   friendly_name: Skya
   icon: mdi:cloud
@@ -146,6 +155,8 @@ sensor.vr_wind_speed:
   friendly_name: Vindfart
   icon: mdi:weather-windy
 
+
+# ________NEST___________
 sensor.bedroom_nest_protect_battery_health:
   friendly_name: Batteri
   icon: mdi:battery
@@ -158,6 +169,8 @@ sensor.bedroom_nest_protect_smoke_status:
   friendly_name: Røykstatus
   icon: mdi:weather-fog
 
+
+# ________XIAOMI___________
 sensor.temperature_158d0001f53fa9:
   friendly_name: Temperatur
 
@@ -184,6 +197,20 @@ binary_sensor.door_window_sensor_158d0001ab77b8:
   friendly_name: Bad
   icon: mdi:door-open
 
+binary_sensor.motion_sensor_158d0002006c77:
+  friendly_name: Opphalsrom
+
+binary_sensor.motion_sensor_158d0001e635e3:
+  friendly_name: Soverom
+
+
+# ________TIBBER___________
 sensor.electricity_price_kirkegata_46:
   friendly_name: Pris
   icon: mdi:flash
+
+
+# ________SOCIAL BLADE___________
+sensor.social_blade:
+  friendly_name: YouTube-abonnentar
+

@@ -17,7 +17,8 @@
       entity_id: sensor.battery_ipad
       below: 45
   action:
-    - service: notify.notifier_peter
+    - service: notify.notifier_html_peter_unnamed_device_3
       data:
-        message: "Hugs å lade iPaden før skule i morgon!"
         title: "Lad iPaden"
+        message: "Hugs å lade iPaden før skule i morgon!"
+        target: "unnamed device 3"
