@@ -34,12 +34,15 @@ Some screenshots of my other views.
 - Samsung UE49KS7005
 - Sesame Smart Lock
 - Xiaomi Smart Home Gateway
-  - Xiaomi Magnetic Door/Window Sensor
-  - Xiaomi Mi Flora Sensor
-  - Xiaomi Temperature and Humidity Sensor
+  - Magnetic Door/Window Sensor
+  - Mi Flora Sensor
+  - Temperature and Humidity Sensor
+  - Motion Sensor
 - NetGear Router
 - TP-Link HS100
-- BroadLink SP2
+- BroadLink
+  - SP2
+  - SP3
 - Mill 900W Wifi electric heater (the Mill app sucks, so just using one of the smart plugs with it to controll it using the climate component in HASS)
 - DIY projects - described below
 
@@ -64,10 +67,11 @@ Some screenshots of my other views.
 * [Bathroom](https://github.com/petrepa/Home-AssistantConfig/blob/master/automations/bathroom.yaml)
   * Greeting - A fun automation made just to annoy Natalia a bit. When the door gets opened, you will be welcomed to the bathroom, so you can have a nice start while doing your important business.
   * Humidity warning - If the humidity level in our bathroom gets to high, probaby cause we are showring, the Play:1 in the bathroom will advice us to turn the fan on.
-* [Bed Button](https://github.com/petrepa/Home-AssistantConfig/blob/master/automations/bed_button.yaml) - Our bed has a Xiaomi button mounted on it to controll our IKEA Trådfri bulbs on our nightstands
+* [Bed](https://github.com/petrepa/Home-AssistantConfig/blob/master/automations/bed_button.yaml) - Our bed has a Xiaomi button mounted on it to controll our IKEA Trådfri bulbs on our nightstands in addition to a bed occupancy sensor.
   * Single Click - Toggle Natalia nightstand.
   * Double Click - Toggle Peter nightstand.
   * Long Press - Toggle the ceiling lamp.
+  * Occupancy - When I get into bed the lights turn off, except the bedside, which turn into a night scene, and the Sonos ungroups any other room than the bedroom (often listen to music in the apartment before I go to bed).
 * [Heating](https://github.com/petrepa/Home-AssistantConfig/blob/master/automations/heation.yaml) - This has lowered our electrical consumption quite a bit, since we live in an old house with bad isolation. 
   * Night time - The heat is lowered to 16 degrees celsius in the living room.
   * Day time - The heat is turned up to 22 degrees celsius in the living room.
