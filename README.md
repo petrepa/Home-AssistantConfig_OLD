@@ -6,6 +6,8 @@ Be sure to :star2: the repo to follow along! Trying to update this regularly.
 The setup is running on a Raspberry Pi 3 Model B, and as of this commit it is running on HASS version __0.66.1__.
 
 This is how my default view looks, where I can controll the most important stuff. Am trying to only have the necessities on this view, and if I need anything more specific I can look to my other views.
+
+__Note: The current screenshots do not replicate the latest configuration files!__
 ![default view](https://github.com/petrepa/Home-AssistantConfig/blob/master/screenshots/1_default_view.png)
 
 Some screenshots of my other views.
