@@ -1,4 +1,6 @@
-# Home Assistant Configuration
+# Old Home Assistant Configuration
+## !! DEPRECATED !!
+
 This is how my Home Assistant configuration is set up. Hope this can be for inspiration for other users of the platform, as the many other repositories on GitHub has helped me on my home automation journey.
 
 Be sure to :star2: the repo to follow along! Trying to update this regularly.
